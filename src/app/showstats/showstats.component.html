@@ -1,0 +1,446 @@
+<!-- <html>
+<app-nav></app-nav>
+<head>
+<style>
+#users {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin: auto;
+}
+
+#users td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#users tr:nth-child(even){background-color: #f2f2f2;}
+
+#users tr:hover {background-color: #ddd;}
+
+#users th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+  <div class="projects-horizontal">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Stats</h2>
+            
+        </div>
+        <div class="row projects">
+            <div class="col-sm-6 item">
+                <div class="row">
+                    <div class="col-md-12 col-lg-5" ><img (click)="clicked('Cricket')" class="img-fluid" src="assets/img/cover_1609393346cover_1596704866cover.jpg"></div>
+                    <div class="col">
+                        <h3 class="name" >CRICKET</h3>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 item">
+                <div class="row">
+                    <div class="col-md-12 col-lg-5"><img (click)="clicked('Football')"  class="img-fluid" src="assets/img/1000x-1.jpg"></div>
+                    <div class="col">
+                        <h3 class="name">SOCCER</h3>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 item">
+                <div class="row">
+                    <div class="col-md-12 col-lg-5"><img (click)="clicked('Table Tenis')"  class="img-fluid" src="assets/img/1_9JdIsCt4tZKgVz7QTTRftw.jpeg"></div>
+                    <div class="col">
+                        <h3 class="name">TABLE TENNIS</h3>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 item">
+                <div class="row">
+                    <div class="col-md-12 col-lg-5"><img (click)="clicked('Volley ball')"  class="img-fluid" src="assets/img/volleyball-with-net-1.jpg"></div>
+                    <div class="col">
+                        <h3 class="name">VOLLEY BALL</h3>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  
+
+<table id="users">  
+  
+    <tr>  
+       
+      <th>Name</th>  
+      <th>Sport</th>  
+      <th>Matches</th>
+      <th>Performance</th>
+      <th>Summary</th>
+      
+    </tr>  
+    
+    <tr *ngFor="let prof of profile">
+      
+      
+      <td>{{prof.name}}</td>  
+      <td>{{prof.SportsCategory}}</td>  
+      <td>{{prof.matches}}</td>  
+      <td>{{prof.Performance}}</td> 
+      <td>{{prof.Summary}}</td>   
+    
+    </tr>  
+    
+  </table>
+  <ng-template #loading>Loading User Data...</ng-template>
+
+
+
+</body>
+</html> -->
+<html>
+<app-nav></app-nav>
+<head>
+<style>
+#users {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin: auto;
+}
+
+#users td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#users tr:nth-child(even){background-color: #f2f2f2;}
+
+#users tr:hover {background-color: #ddd;}
+
+#users th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+/* :root{
+  --background-dark: #2d3548;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+} */
+
+/* *{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* html{
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+} */
+
+body{
+  height: 100%;
+  background-color: rgb(216, 216, 216);
+  size: 100vh;
+  background-size: 100vh;
+}
+
+/* .hero-section{
+  align-items: flex-start;
+  background-image: linear-gradient(15deg, #0f4667 0%, #2a6973 150%);
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+} */
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .card-grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+.card{
+  list-style: none;
+  position: relative;
+  padding: 50%;
+  margin: 10%;
+  padding-top: 0%;
+
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  background-repeat: no-repeat;
+  
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  size: auto;
+  transform-origin: center;
+  transform: scale(1) translateZ(0);
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: #f2f2f2;
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card__heading{
+  color: #f2f2f2;
+  font-size: 5rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+  text-align: center
+}
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #2d2e2e;
+  color: white;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>Stats</h1>
+    <p>All recent stats</p>
+  </div>
+  <!-- <div class="projects-horizontal">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Stats</h2>
+            <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+        </div>
+        <div class="row projects">
+            <div class="col-sm-6 item">
+                <div class="row">
+                    <div class="col-md-12 col-lg-5" ><img (click)="clicked('Cricket')" class="img-fluid" src="assets/img/cover_1609393346cover_1596704866cover.jpg"></div>
+                    <div class="col">
+                        <h3 class="name" >CRICKET</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 item">
+                <div class="row">
+                    <div class="col-md-12 col-lg-5"><img (click)="clicked('Soccer')"  class="img-fluid" src="assets/img/1000x-1.jpg"></div>
+                    <div class="col">
+                        <h3 class="name">SOCCER</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 item">
+                <div class="row">
+                    <div class="col-md-12 col-lg-5"><img (click)="clicked('Table Tennis')"  class="img-fluid" src="assets/img/1_9JdIsCt4tZKgVz7QTTRftw.jpeg"></div>
+                    <div class="col">
+                        <h3 class="name">TABLE TENNIS</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 item">
+                <div class="row">
+                    <div class="col-md-12 col-lg-5"><img (click)="clicked('volley ball')"  class="img-fluid" src="assets/img/volleyball-with-net-1.jpg"></div>
+                    <div class="col">
+                        <h3 class="name">VOLLEY BALL</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div> -->
+
+  
+
+<!-- <table id="users">  
+  
+    <tr>  
+       
+      <th>Name</th>  
+      <th>Sport</th>  
+      <th>Matches</th>
+      <th>Performance</th>
+      <th>Summary</th>
+      
+    </tr>  
+    
+    <tr *ngFor="let prof of profile">
+      
+      
+      <td>{{prof.name}}</td>  
+      <td>{{prof.SportsCategory}}</td>  
+      <td>{{prof.matches}}</td>  
+      <td>{{prof.Performance}}</td> 
+      <td>{{prof.Summary}}</td>   
+    
+    </tr>  
+    
+  </table>
+  <ng-template #loading>Loading User Data...</ng-template> -->
+<!-- </div> -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<div style="height:50%;">
+<section class="hero-section">
+<div class="card-grid">
+  <a class="card" (click)="clicked('Cricket')">
+    <div class="card__background" style="background-image: url(assets/img/cover_1609393346cover_1596704866cover.jpg)" ></div>
+    <div class="card__content">
+      <p class="card__category">Category</p>
+      <h3 class="card__heading">Cricket</h3>
+    </div>
+  </a>
+  <a class="card" (click)="clicked('Football')">
+    <div class="card__background" style="background-image: url(assets/img/1000x-1.jpg)"></div>
+    <div class="card__content">
+      <p class="card__category">Category</p>
+      <h3 class="card__heading">Football</h3>
+    </div>
+  </a>  
+
+  <a class="card"  (click)="clicked('Table Tenis')">
+    <div class="card__background" style="background-image: url(assets/img/1_9JdIsCt4tZKgVz7QTTRftw.jpeg)"></div>
+    <div class="card__content">
+      <p class="card__category">Category</p>
+      <h3 class="card__heading">Table Tenis</h3>
+    </div>
+  </a>  
+
+  <a class="card" (click)="clicked('Volley Ball')">
+    <div class="card__background" style="background-image: url(assets/img/volleyball-with-net-1.jpg)"></div>
+    <div class="card__content">
+      <p class="card__category">Category</p>
+      <h3 class="card__heading">Volley ball</h3>
+    </div>
+  </a>  
+
+</div>
+
+
+</section>
+</div >
+
+<table id="users">  
+  
+  <tr>  
+     
+    <th>Name</th>  
+    <th>Sport</th>  
+    <th>Matches</th>
+    <th>Performance</th>
+    <th>Summary</th>
+    
+  </tr>  
+  
+  <tr *ngFor="let prof of profile">
+    
+    
+    <td>{{prof.name}}</td>  
+    <td>{{prof.SportsCategory}}</td>  
+    <td>{{prof.matches}}</td>  
+    <td>{{prof.Performance}}</td> 
+    <td>{{prof.Summary}}</td>   
+  
+  </tr>  
+  
+</table>
+<ng-template #loading>Loading User Data...</ng-template>
+
+<h1>COMMENTS</h1>
+<ul class="list-group" style="width: 500px;margin: 0 auto">
+    <li class="list-group-item">
+        <ul *ngFor="let c of comments">
+            <li class="list-group-item" >
+                <strong>User: {{c.user}}</strong>
+            </li>
+            <li class="list-group-item">
+                {{c.comment}}
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<div *ngIf="isNotPlayer()">
+  <div style="text-align: center;">
+<input [(ngModel)]="com" type="text" class="form-control" style="height: 100px; width: 500px;margin: 0 auto;" name="Comment" ngModel placeholder="Your Comment here" class="form-control">
+<button (click)="addcomment()" class="btn btn-primary btn-block" style="width: 500px;margin: 0 auto;" >Add Comment</button>
+
+</div>
+</div>
+
+</body>
+</html>

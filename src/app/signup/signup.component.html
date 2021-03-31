@@ -1,0 +1,77 @@
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark navbar-custom">
+    <div class="container"><a class="navbar-brand" href="#">Squad in</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/login">Log In</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="register-photo">
+    <div class="form-container">
+        <div class="image-holder" style="background: url(&quot;assets/img/riley-mccullough-iezcEpGuYdE-unsplash.jpg&quot;);background-size: cover;"></div>
+        <form method="post">
+            <h2 class="text-center"><strong>Create</strong> an account.</h2>
+            <form #signupForm="ngForm">
+                <div ngModelGroup="registration">
+                     <div class="form-group">
+                         <label for="firstName" class="for">User Name</label>
+                         <!-- <input ngModel name="fName" #fName="ngModel" type="text" id="fName" class="form-control" (change)="onChange(fName)"> -->
+                         <input required minlength="5" maxlength="15"  [(ngModel)]="user.name" name="fName" #fName="ngModel" type="text" id="fName" class="form-control">
+                         <div class="alert alert-danger" *ngIf="fName.touched && !fName.valid">
+                             <div *ngIf="fName.errors.required">First Name is a required field.</div>
+                             <div *ngIf="fName.errors.minlength">First Name should be minimum 5 characters.</div>
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         <label for="email" class="for">Email Address</label>
+                         <input required [(ngModel)]="user.email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" name="email" #email="ngModel" type="text" id="email" class="form-control">
+                         <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                             <div *ngIf="email.errors.required">Email is a required field.</div>
+                             <div *ngIf="email.errors.pattern">Invalid email address.</div>
+                         </div>
+                     </div>
+                     <div *ngIf="!isEditMode; then createuser"></div>
+                     <ng-template #createuser>
+                         <div class="form-group">
+                             <label for="password" class="for">Password</label>
+                             <input required ngModel name="password" #password="ngModel" type="password" id="password" class="form-control">
+                             <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+                                 <div *ngIf="password.errors.required">Password is a required field.</div>
+                             </div>
+                         </div>
+                     </ng-template>
+                     
+                     
+                     <div class="form-group">
+                         <label for="userType">User Type:</label>
+                         <select [(ngModel)]="user.userType" name="userType" id="userType" class="form-control">
+                             <!-- <option value="1">Rider</option> -->
+                             <option *ngFor="let ut of userType" 
+                                 value="{{ut.type}}"> {{ut.type}} </option>
+                                 <!-- <option *ngFor="let ut of userType"
+                                     [ngValue]="ut">{{ut.type}}</option> -->
+                         </select>
+                     </div>
+                    
+                </div>
+                <div *ngIf="!isEditMode; then registeruser else updateuser"></div>
+                <ng-template #registeruser> 
+                     <button type="submit"  class="btn btn-primary btn-block"  (click)="signupUser(signupForm)" >Sign Up</button>
+                </ng-template>
+                <ng-template #updateuser> 
+                    <div> <a routerLink="/userprofile"><button class="btn btn-primary" (click)=updateUser()>Update</button></a>
+                    </div>
+                </ng-template>   
+                </form>
+                </form>
+            
+                
+          
+            </div>
+            </div>
+            
+            
+       
+             

@@ -1,0 +1,59 @@
+
+<html>
+
+<head>
+   
+<style>
+#users {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin: auto;
+}
+
+#users td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#users tr:nth-child(even){background-color: #f2f2f2;}
+
+#users tr:hover {background-color: #ddd;}
+
+#users th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0a0a0a;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+    
+<table id="users">  
+  
+    <tr>  
+       
+      <th>Name</th>  
+      <th>email</th>  
+      <th>User Type</th>
+      
+    </tr>  
+    
+    <tr>
+      
+      
+      <td>{{profile.name}}</td>  
+      <td>{{profile.email}}</td>  
+      <td>{{profile.userType}}</td>  
+      
+    
+    </tr>  
+    
+    
+  </table>  
+  <p type="button" class="btn btn-primary edit" (click)="editUser(user)">Edit</p>
+</body>
+</html>

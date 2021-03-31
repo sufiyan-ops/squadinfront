@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.form-control.ng-touched.ng-invalid {
+    border: 2px solid red;
+}
+
+/* Styling for Toastr*/
+button{
+    padding: 10px;
+    margin: 0px;
+    background-color: red;
+    border-radius: 100px;
+    cursor: pointer;
+    border: 0px;
+}
+
+
+.btn.btn-primary.edit {
+    margin-left: 10px;
+}
+body{
+
+    padding-top: 80px;
+}
+
+
+ button{
+
+    padding: 10px;
+    margin:0px;
+    background-color: red;
+    border-radius: 100px;
+    cursor:pointer;
+    border: 0px;
+
+ }
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

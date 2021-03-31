@@ -1,0 +1,107 @@
+<!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" routerLink="/">Squad-In</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+
+  
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/postjob">Create Activity<span class="sr-only"></span></a>
+          
+      
+         </li>
+        
+    
+       
+         
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/chat">Chat<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/feed">Feed<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" [routerLink]="['/showstats',userid]">Watch Stats<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/stats">Stats<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/showaddjob">Depart Trails<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/showdescription">Rent Equipment<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/navbar">Home<span class="sr-only"></span></a>
+        </li>
+        
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isOrganizer()" routerLinkActive="active current" routerLink="/addjob"> Organize Events <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isOrganizer()" routerLinkActive="active current" routerLink="/watchplayer"> Watch Player <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isOrganizer()" routerLinkActive="active current" routerLink="/addjob"> Event Analytics <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isOrganizer()" routerLinkActive="active current" routerLink="/chat"> Chat Room <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isOrganizer()" routerLinkActive="active current" routerLink="/navbar"> Home <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isDepartment()" routerLinkActive="active current" routerLink="/watchplayer"> Hire Player <span class="sr-only"></span></a>
+        </li>
+        
+       
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isDepartment()" routerLinkActive="active current" routerLink="/userdashboard">Add Trails <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isDepartment()" routerLinkActive="active current" routerLink="/chat"> Chat Room <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isDepartment()" routerLinkActive="active current" routerLink="/navbar">Home <span class="sr-only"></span></a>
+        </li>
+        
+        
+        <li ngbDropdown class="nav-item dropdown active ">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="dropdown01" id="dropdown02" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{userName}}</a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+           
+           
+            <a class="dropdown-item" routerLink="/login"> Logout</a>
+            <a class="dropdown-item" routerLink="/userprofile"> Profile</a>
+            
+            
+          </div>
+          
+        </li>
+      </ul>
+      
+    </div>
+
+    
+  </nav> -->
+
+  <nav  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" class="fixed-top">
+    <mat-toolbar  style="height: 80px;" color="primary">
+      
+
+
+      <a href="feed"><span>Squad IN</span></a>
+      <div class="spacer"> </div>
+      <a style="color: rgb(255, 255, 255);" class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/chat">Chat<span class="sr-only"></span></a>
+      <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/feed">Feed<span class="sr-only"></span></a>
+      <a class="nav-link" *ngIf="isDepartment()" routerLinkActive="active current" routerLink="/watchplayer"> Hire Player <span class="sr-only"></span></a>
+      <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" [routerLink]="['/showstats',userid]">Watch Stats<span class="sr-only"></span></a>
+    </mat-toolbar>
+
+  </nav>
+
+  

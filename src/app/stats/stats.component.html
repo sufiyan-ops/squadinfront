@@ -1,0 +1,69 @@
+<app-nav></app-nav>
+<div class="register-photo">
+    <div class="form-container">
+        <div class="image-holder" style="background: url(&quot;assets/img/stat.jpg&quot;);background-size: 100% 100%;"></div>
+        <form method="post">
+            <h2 class="text-center"><strong>Create</strong> Stats </h2>
+            <form #signupForm="ngForm">
+                <div ngModelGroup="registration">
+
+                    <div class="form-group">
+                        <label for="name" class="for">Name</label>
+                        <!-- <input ngModel name="fName" #fName="ngModel" type="text" id="fName" class="form-control" (change)="onChange(fName)"> -->
+                        <input required minlength="3" maxlength="15"  [(ngModel)]="stat.name" name="fName" #fName="ngModel" type="text" id="fName" class="form-control">
+                        <div class="alert alert-danger" *ngIf="fName.touched && !fName.valid">
+                            <div *ngIf="fName.errors.required">Matches no is a required field.</div>
+                            
+                        </div>
+                    </div>
+                     <div class="form-group">
+                         <label for="Performance" class="for">Performance Detail</label>
+                         <!-- <input ngModel name="fName" #fName="ngModel" type="text" id="fName" class="form-control" (change)="onChange(fName)"> -->
+                         <input required minlength="3" maxlength="15"  [(ngModel)]="stat.Performance" name="Performance" #Performance="ngModel" type="text" id="Performance" class="form-control">
+                         
+                     </div>
+                     <div class="form-group">
+                        <label for="Summary" class="for">Your Summary</label>
+                        <input required [(ngModel)]="stat.Summary"  name="Summary" #Summary="ngModel" type="text" id="Summary" class="form-control">
+                        
+                        
+                    </div>
+                     <div class="form-group">
+                         <label for="matches" class="for">Matches</label>
+                         <input required [(ngModel)]="stat.matches"  name="matches" #matches="ngModel" type="text" id="matches" class="form-control">
+                         
+                         
+                     </div>
+                     <div *ngIf="!isEditMode; then createuser"></div>
+                     <ng-template #createuser>
+                         
+                     </ng-template>
+                     
+                     
+                     <div class="form-group">
+                         <label for="SportsCategory"> Select Sport:</label>
+                         <select [(ngModel)]="stat.SportsCategory" name="SportsCategory" id="SportsCategory" class="form-control">
+                            
+                             <option *ngFor="let ut of SportsCategory" 
+                                 value="{{ut.type}}"> {{ut.type}} </option>
+                                
+                         </select>
+                     </div>
+                    
+                </div>
+                <div *ngIf="!isEditMode; then registeruser "></div>
+                <ng-template #registeruser> 
+                     <button type="submit"  class="btn btn-primary btn-block"  (click)="signupUser(signupForm)" >Update Stats</button>
+                </ng-template>
+               
+                </form>
+                </form>
+            
+                
+          
+            </div>
+            </div>
+            
+            
+       
+             

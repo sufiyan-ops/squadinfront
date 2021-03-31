@@ -1,0 +1,25 @@
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark navbar-custom">
+    <div class="container"><a class="navbar-brand" href="#">Squad in</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" routerLink="/signup">Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/login">Log In</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="register-photo">
+    <div class="form-container">
+        <div class="image-holder" style="background: url(&quot;assets/img/kevin-mueller-7CMKUb9EV90-unsplash.jpg&quot;);background-size: cover;"></div>
+        <form method="post">
+            <h2 class="text-center">Login</h2>
+            <form class="form-signin" #f="ngForm" (ngSubmit)="signIn(f.value)"> 
+           <input class="form-control" type="email" id="inputEmail" name="email" ngModel placeholder="Email">
+           <input type="password" id="inputPassword" name="password" ngModel class="form-control" placeholder="Password">
+            
+            <button class="btn btn-primary btn-block" type="submit">LOGIN</button>
+            </form>
+            </form>
+        </div>
+    
+    

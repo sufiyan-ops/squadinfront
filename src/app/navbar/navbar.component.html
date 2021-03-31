@@ -1,0 +1,128 @@
+<!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" routerLink="/">Squad In</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+
+    
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/postjob">Create Activity<span class="sr-only"></span></a>
+            
+        
+           </li>
+          
+      
+         
+           
+          <li class="nav-item active">
+            <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/showaddjob">Chat<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/showstats">Watch Stats<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/stats">Stats<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/showaddjob">Depart Trails<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" *ngIf="isPlayer()" routerLinkActive="active current" routerLink="/showdescription">Rent Equipment<span class="sr-only"></span></a>
+          </li>
+          
+          <li class="nav-item active">
+            <a class="nav-link" *ngIf="isOrganizer()" routerLinkActive="active current" routerLink="/addjob"> Organize Events <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" *ngIf="isOrganizer()" routerLinkActive="active current" routerLink="/addjob"> Event Analytics <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" *ngIf="isOrganizer()" routerLinkActive="active current" routerLink="/showinterview"> Player Chat <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" *ngIf="isDepartment()" routerLinkActive="active current" routerLink="/myjobs"> Hire Player <span class="sr-only"></span></a>
+          </li>
+         
+          <li class="nav-item active">
+            <a class="nav-link" *ngIf="isDepartment()" routerLinkActive="active current" routerLink="/userdashboard">Add Trails <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" *ngIf="isDepartment()" routerLinkActive="active current" routerLink="/userdashboard">Player Chat <span class="sr-only"></span></a>
+          </li>
+          
+          
+          <li ngbDropdown class="nav-item dropdown active ">
+            <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="dropdown01" id="dropdown02" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{userName}}</a>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+             
+             
+              <a class="dropdown-item" routerLink="/login"> Logout</a>
+              <a class="dropdown-item" routerLink="/userdata"> Profile</a>
+              
+              
+            </div>
+            
+          </li>
+        </ul>
+        
+      </div>
+
+      
+    </nav> -->
+    <app-nav></app-nav>
+    <div class="article-list">
+      <div class="container">
+          <div class="intro">
+              <h2 class="text-center" *ngIf="isPlayer()" >Welcome Player {{userName}}</h2>
+              <h2 class="text-center" *ngIf="isOrganizer()" >Welcome Organizer {{userName}}</h2>
+              <h2 class="text-center" *ngIf="isDepartment()" >Welcome Recruiter {{userName}}</h2>
+              
+              
+              <p class="text-center">SHOWCASE YOUR TALENT,ORGANIZE EVENT AND GET SELECTED!</p>
+          </div>
+          <div class="row articles">
+              <div class="col-sm-6 col-md-4 item" *ngIf="isDepartment()"><a href="#"><img class="img-fluid" src="assets/img/lars-bo-nielsen-Wu7hYE7Lzzs-unsplash.jpg" style="height: 231px;"></a>
+                  <h3 class="name">Trials</h3>
+                  <p class="description"></p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
+
+                  <div class="col-sm-6 col-md-4 item" *ngIf="isDepartment()"><a routerLink="/watchplayer"><img class="img-fluid" src="assets/img/hire.jpg" style="height: 231px;"></a>
+                    <h3 class="name" >Hire Player</h3>
+                    <p class="description"></p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
+                    <div class="col-sm-6 col-md-4 item" *ngIf="isDepartment()"><a routerLink="/chat"><img class="img-fluid" src="assets/img/chat.jpg" style="height: 231px;"></a>
+                      <h3 class="name" >Start Chat</h3>
+                      <p class="description"></p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
+                      <div class="col-sm-6 col-md-4 item" *ngIf="isOrganizer()"><a href="#"><img class="img-fluid" src="assets/img/event.jpg" style="height: 231px;"></a>
+                        <h3 class="name">Organize Events</h3>
+                        <p class="description"></p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
+
+                  <div class="col-sm-6 col-md-4 item" *ngIf="isOrganizer()"><a href="#"><img class="img-fluid" src="assets/img/chart.png" style="height: 231px;"></a>
+                    <h3 class="name">Analytics</h3>
+                    <p class="description"></p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
+
+                    <div class="col-sm-6 col-md-4 item" *ngIf="isOrganizer()"><a routerLink="/chat"><img class="img-fluid" src="assets/img/chat.jpg" style="height: 231px;"></a>
+                      <h3 class="name">Start Chat</h3>
+                      <p class="description"></p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
+
+                      <div class="col-sm-6 col-md-4 item" *ngIf="isPlayer()"><a routerLink="/userprofile"><img class="img-fluid" src="assets/img/Profile.png" style="height: 231px;"></a>
+                        <h3 class="name" >Profile</h3>
+                        <p class="description"></p><a class="action" routerLink="/userdata"><i class="fa fa-arrow-circle-right"></i></a></div>
+          <div
+              class="col-sm-6 col-md-4 item" *ngIf="isPlayer()" ><a href="#"><img class="img-fluid" src="assets/img/sell.jpg"></a>
+              <h3 class="name">Sell Equipments</h3>
+              <p class="description"></p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
+              <div class="col-sm-6 col-md-4 item" *ngIf="isPlayer()"><a routerLink="/chat"><img class="img-fluid" src="assets/img/chat.jpg" style="height: 231px;"></a>
+                <h3 class="name">Start Chat</h3>
+                <p class="description"></p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
+                <div class="col-sm-6 col-md-4 item" *ngIf="isPlayer()"><a href="#"><img class="img-fluid" src="assets/img/lars-bo-nielsen-Wu7hYE7Lzzs-unsplash.jpg" style="height: 231px;"></a>
+                  <h3 class="name">Watch Trails</h3>
+                  <p class="description"></p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
+                  
+  </div>
+  </div>
+  </div>
+
+  
+   

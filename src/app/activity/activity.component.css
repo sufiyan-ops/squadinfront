@@ -1,0 +1,40 @@
+
+
+.example-card {
+    width: 10px;
+    min-width: 540px;
+    height: auto;
+    /* max-width: 400px; */
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .flex-container {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    padding-top: 50px;
+    background-color: #f3f2ef;
+  }
+  button{
+    
+    background-color: rgb(255, 255, 255);
+  }
+ 
+  .panel {
+    box-shadow: 0 2px 0 rgba(0,0,0,0.075);
+    border-radius: 0;
+    border: 0;
+    margin-bottom: 15px;
+    width: 540px;
+}
+.card-header{
+  
+  
+  width: 100%;
+  
+}

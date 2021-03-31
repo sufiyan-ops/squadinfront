@@ -1,0 +1,42 @@
+
+<app-nav></app-nav>
+<ng-container class="heading">
+    
+</ng-container>
+<div class="body" style="width: 500px;margin: 0 auto; ">
+    <div *ngIf="data.length>0; then listdata else nodata"></div>
+    <ng-template #listdata>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a
+                 [ngClass] = "{
+                    'nav-link' : true,
+                    'active' : userType == 'Player'
+                 }"
+                 (click) = "userType = 'Player'"
+                >Player</a>
+            </li>
+           
+        </ul>
+        <div [ngSwitch] = "userType">
+            <div *ngSwitchCase = "'Player'">
+                <ul class="list-group" *ngFor="let user of data">
+                    <li class="list-group-item" *ngIf="(user.userType ) =='Player'">
+                       <p>Name:  {{user.name}}</p>
+                       <p>Email:  {{user.email}}</p>
+                       <p type="button" class="btn btn-primary" (click)="viewDetail(user)">View Profile</p>
+                       
+                    </li>
+                </ul>
+            </div>
+           
+            <div *ngSwitchDefault>All Data</div>
+        </div>
+    </ng-template>
+    <ng-template #nodata>
+        <h4>No Data Exists!</h4>
+    </ng-template>
+</div>
+
+
+

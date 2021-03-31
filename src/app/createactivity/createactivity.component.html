@@ -1,0 +1,24 @@
+
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+<div class="container">
+    <h1 style="padding-bottom: 100px;">Create Activity</h1>
+    
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Name Of Activity</mat-label>
+        <input matInput type="text" [(ngModel)]='activityname'/>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]='description'></textarea>
+      </mat-form-field>
+
+
+
+
+
+
+    <button (click)="submit()" class="btn-create" color="primary" mat-raised-button>Create</button>
+
+
+</div>

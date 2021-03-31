@@ -1,0 +1,27 @@
+<app-nav></app-nav>
+<html>
+
+<ul class="list-group">
+
+
+
+    <h1>Profile</h1>
+
+    <li
+   
+   
+    class="list-group-item">
+
+
+<tr>Name: {{profile.name}}</tr>  <tr>Email: {{profile.email}}</tr><td> <tr>User Type: {{profile.userType}}</tr>
+    
+    <p type="button" class="btn btn-primary edit" (click)="editUser(user)">Edit</p> 
+</li>
+<div *ngSwitchDefault>All Data</div>
+
+
+        
+        
+    
+</ul>
+</html>
